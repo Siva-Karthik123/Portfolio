@@ -1,0 +1,101 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #3498db, #2c3e50);
+  color: var(--secondary);
+  text-align: center;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-content {
+  max-width: 600px;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.home h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.home p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ffffff10, #00000000);
+  animation: rotateBackground 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
