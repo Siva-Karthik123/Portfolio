@@ -1,101 +1,114 @@
-.home {
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full Page Container */
+.home-container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #000, #111, #00aaff);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(120deg, #3498db, #2c3e50);
-  color: var(--secondary);
   text-align: center;
-  height: 80vh;
-  position: relative;
   overflow: hidden;
 }
 
-.home-content {
-  max-width: 600px;
-  padding: 1rem;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: var(--secondary);
-}
-
-.home h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--secondary);
-}
-
-.home p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--secondary);
-}
-
-.home-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--secondary);
-  color: var(--primary);
-}
-
-.btn-primary:hover {
-  background: #ffffff;
-  transform: scale(1.05);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--secondary);
-  border: 2px solid var(--secondary);
-}
-
-.btn-secondary:hover {
-  background: var(--secondary);
-  color: var(--primary);
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .home h1 {
-    font-size: 2.5rem;
-  }
-
-  .home p {
-    font-size: 1rem;
-  }
-}
-
-.home::before {
-  content: '';
+/* Overlay Effect */
+.overlay {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, #ffffff10, #00000000);
-  animation: rotateBackground 10s linear infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
-@keyframes rotateBackground {
-  0% {
-    transform: rotate(0deg);
+/* Header Section */
+.header {
+  z-index: 1;
+}
+
+.title {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #00aaff;
+}
+
+.dynamic-text {
+  color: #fff;
+  border-bottom: 3px solid #00aaff;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  background-color: #00aaff;
+  color: #000;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 170, 255, 0.5);
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 170, 255, 0.8);
+}
+
+/* Floating Elements */
+.floating-elements .floating {
+  width: 80px;
+  height: 80px;
+  background: #00aaff;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.7);
+  animation: float 6s infinite ease-in-out;
+}
+
+.floating:nth-child(1) {
+  top: 20%;
+  left: 15%;
+}
+
+.floating:nth-child(2) {
+  bottom: 25%;
+  right: 20%;
+}
+
+.floating:nth-child(3) {
+  top: 40%;
+  left: 75%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  100% {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-30px);
   }
 }

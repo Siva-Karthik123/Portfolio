@@ -1,22 +1,31 @@
+:root {
+  --primary: #0d1117;  /* Dark Background */
+  --secondary: #ecf0f1;  /* Light Text Color */
+  --accent: #00aaff;  /* Highlight Blue */
+}
+
+/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: #0d1117;
+  color: #ecf0f1;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+/* Logo Section */
 .navbar-logo a {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: var(--secondary);
+  color: #00aaff !important;  /* Force highlight color for logo */
   text-decoration: none;
 }
 
+/* Navigation Links */
 .navbar-links {
   display: flex;
   gap: 1.5rem;
@@ -24,15 +33,17 @@
 
 .navbar-links .nav-item a {
   font-size: 1rem;
-  color: var(--secondary);
+  color: #ecf0f1 !important;  /* Force light color for visibility */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
+/* Hover Effect for Links */
 .navbar-links .nav-item a:hover {
-  color: var(--accent);
+  color: #00aaff !important;  /* Highlight effect on hover */
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -42,25 +53,32 @@
 .hamburger .line {
   width: 25px;
   height: 3px;
-  background-color: var(--secondary);
+  background-color: #ecf0f1 !important;  /* Visible hamburger lines */
   margin: 3px 0;
 }
 
+/* Mobile Menu */
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 10px;
-    background-color: var(--primary);
+    background-color: #0d1117;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     padding: 1rem;
   }
 
   .navbar-links.active {
     display: flex;
+  }
+
+  .navbar-links .nav-item a {
+    font-size: 1.2rem;
+    color: #ecf0f1 !important;  /* Ensure visibility in mobile */
+    padding: 0.5rem 0;
   }
 
   .hamburger {
