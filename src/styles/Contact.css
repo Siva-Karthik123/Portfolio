@@ -1,20 +1,21 @@
 .contact {
   position: relative;
-  padding: 3rem 1rem;
-  background: linear-gradient(120deg, #3498db, #2c3e50);
-  overflow: hidden;
-  color: var(--secondary);
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #000428, #004e92);
+  color: #fff;
   text-align: center;
   min-height: 100vh;
+  overflow: hidden;
 }
+
 .particles span {
   position: absolute;
   display: block;
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  animation: floatParticles 10s linear infinite;
+  animation: floatParticles 12s linear infinite;
 }
 
 .particles span:nth-child(odd) {
@@ -23,37 +24,37 @@
   animation-duration: 15s;
 }
 
+/* Heading */
 .contact h2 {
-  font-size: 2.5rem;
-  color: white;
+  font-size: 3rem;
   margin-bottom: 2rem;
+  color: #00aaff;
   position: relative;
   z-index: 1;
 }
 
+/* Form Styles */
 form {
-  position: relative;
-  z-index: 1;
   max-width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 input,
 textarea {
-  margin-bottom: 1rem;
-  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   outline: none;
   background: rgba(255, 255, 255, 0.1);
-  color: var(--secondary);
+  color: #fff;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -64,59 +65,33 @@ textarea:focus {
 }
 
 button {
-  padding: 0.8rem;
-  background: var(--accent);
-  color: var(--secondary);
+  padding: 1rem;
+  background: #00aaff;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
-  background: var(--primary);
-  transform: scale(1.1);
+  background: #ffffff;
+  color: #004e92;
+  transform: scale(1.05);
 }
 
+/* Form Status Message */
 .form-status {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: var(--accent);
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #00ff99;
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .contact h2 {
-    font-size: 2rem;
-  }
-
-  form {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact h2 {
-    font-size: 1.8rem;
-  }
-
-  form {
-    padding: 1rem;
-  }
-
-  input,
-  textarea {
-    font-size: 0.9rem;
-  }
-
-  button {
-    font-size: 0.9rem;
-  }
-}
-
+/* Particle Animation */
 @keyframes floatParticles {
   0% {
     transform: translateY(0) translateX(0);
@@ -130,3 +105,88 @@ button:hover {
     opacity: 0;
   }
 }
+
+.contact {
+  position: relative;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #000428, #004e92);
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.particles span {
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: floatParticles 12s linear infinite;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #00aaff;
+  position: relative;
+  z-index: 1;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+input, textarea {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+button {
+  padding: 1rem;
+  background: #00aaff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+  background: #ffffff;
+  color: #004e92;
+  transform: scale(1.05);
+}
+
+/* Social Icons Section */
+.socials {
+  margin-top: 4rem;
+}
+
+.socials h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import '../styles/Contact.css';
 import { motion } from 'framer-motion';
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -12,8 +14,19 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormStatus('Thank you for reaching out! I’ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+
+    emailjs.sendForm(
+      'service_afbglhq', 
+      'template_opl26vi',
+      e.target,
+      'KRXSACGPr3uJiQxC1'
+    )
+    .then((result) => {
+      setFormStatus('Thank you for reaching out! I’ll get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
+    }, (error) => {
+      setFormStatus('Oops! Something went wrong. Please try again.');
+    });
   };
 
   return (
@@ -31,6 +44,24 @@ function Contact() {
           ></span>
         ))}
       </div>
+      {/* Social Media Section */}
+      <div className="socials">
+        <h3>Connect With Me</h3>
+        <div className="social-icons">
+          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={30} />
+          </a>
+          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={30} />
+          </a>
+          <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer">
+            <FaTwitter size={30} />
+          </a>
+          <a href="mailto:your-email@gmail.com">
+            <FaEnvelope size={30} />
+          </a>
+        </div>
+      </div>
 
       <motion.h2
         initial={{ opacity: 0, y: -50 }}
@@ -39,6 +70,7 @@ function Contact() {
       >
         Contact Me
       </motion.h2>
+
       <motion.form
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -69,8 +101,15 @@ function Contact() {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">Send</button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          type="submit"
+        >
+          Send
+        </motion.button>
       </motion.form>
+
       {formStatus && (
         <motion.p
           className="form-status"
@@ -81,6 +120,8 @@ function Contact() {
           {formStatus}
         </motion.p>
       )}
+
+      
     </section>
   );
 }
